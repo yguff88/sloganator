@@ -1,10 +1,5 @@
 var party;
 var name;
-var randomSlogan;
-var randomNoun;
-var randomAdjective;
-var randomVerb;
-var choices;
 var randomrepublicanNoun;
 var randomrepublicanAdjective;
 var randomrepublicanVerb;
@@ -53,21 +48,29 @@ $('button').on('click',function(){
 			$('#submit').css('border-color','#333333');
 			$('#submit').css('color','#333333');
 		});	
-	};
+	}
 	party = $(this).text();
 });
 
 $('#submit').on('click',function(){
 	event.preventDefault();
+	name = $('#name').val();
 	$('.yourName').animate({left: '1000px'},750,function(){
-		name = $('#name').val();
-		console.log(name);
-		console.log(choices[3]);
-		if (party === "Democrat"){
-			random
-		} else if (party === "Republican") {
-
+		if (party === "Republican"){
+			randomrepublicanNoun = republicanNouns[Math.floor(Math.random()*republicanNouns.length)];
+			randomrepublicanAdjective = republicanAdjectives[Math.floor(Math.random()*republicanAdjectives.length)];
+			randomrepublicanVerb = republicanVerbs[Math.floor(Math.random()*republicanVerbs.length)];
+			console.log(randomrepublicanNoun);
+			console.log(randomrepublicanAdjective);
+			console.log(randomrepublicanVerb);
+			console.log(name);
+			console.log(republicanChoices[5]);
+			$('.response').html(republicanChoices[Math.floor(Math.random()*republicanChoices.length)]); 
+		} else if (party === "Democrat") {
+			randomdemocratNoun = democratNouns[Math.floor(Math.random()*democratNouns.length)];
+			randomdemocratAdjective = democratAdjectives[Math.floor(Math.random()*democratAdjectives.length)];
+			randomdemocratVerb = democratVerbs[Math.floor(Math.random()*democratVerbs.length)];
+			$('.response').html(democratChoices[Math.floor(Math.random()*democratChoices.length)]);
 		}
-		$('.response').html(republicanNouns[Math.floor(Math.random()*republicanNouns.length)] + ". " + democratNouns[Math.floor(Math.random()*democratNouns.length)] + ". " + democratNouns[Math.floor(Math.random()*democratNouns.length)] + ".");
 	});
-});
+	});
