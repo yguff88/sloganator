@@ -79,7 +79,7 @@ button {
   text-align:center;
 }
 
-button, .yourName h2, .yourName #name, .yourName #submit, .response {
+button, .yourName h2, .yourName #name, .yourName #submit, .response, h1.myname, h2.response {
     -webkit-transition: background-color 1s;
     -moz-transition: background-color 1s;
     -o-transition: background-color 1s;
@@ -144,9 +144,26 @@ button.democrat:hover {
 }
 
 .response {
-  display:inline-block;
   color:black;
+  margin-top:10px;
 }
+
+.myname {
+  color:black;
+  margin-bottom:0px;
+}
+
+h2.response {
+  font-size:40px;
+  clear:both;
+  color:#E10A19;
+}
+
+h1.myname {
+  font-size:60px;
+  color:#093E80;
+}
+
 
 
 
